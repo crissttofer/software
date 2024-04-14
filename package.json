@@ -1,0 +1,13 @@
+{
+  "name": "proyecto-de-software",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev":"nodemon app.js",
+    "start":"nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "Huaman Altamirano Cristofer Jhoseph, Gomez Alarcón Samir, Carrion Ccorimanya Angelo, Diaz Quispe Yeferson",
+  "license": "ISC"
+}
