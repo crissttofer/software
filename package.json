@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type":"module",
   "scripts": {
-    "dev":"nodemon app.js",
-    "start":"nodemon ./src/app.js"
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
   },
   "keywords": [],
   "author": "Huaman Altamirano Cristofer Jhoseph, Gomez Alarcón Samir, Carrion Ccorimanya Angelo, Diaz Quispe Yeferson",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "mysql2": "^3.9.4"
+  }
 }
