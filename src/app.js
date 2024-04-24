@@ -6,6 +6,7 @@ import {engine} from "express-handlebars";
 import { __dirname } from "./utils.js";
 import helmet from "helmet";
 import cors from "cors";
+import routerPrueba from "./routes/prueba.js"
 
 const app=express();
 const PORT=4000;
@@ -31,9 +32,13 @@ app.set('view engine','hbs')
 
 
 
-app.get('/helloword',(req,res)=>{
-  res.render('home')
-})
+// app.get('/helloword',(req,res)=>{
+//   console.log()
+//   res.render("helloworld")
+// })
+app.use('/',routerPrueba)
+
+
 app.listen(PORT,()=>{
   console.log(`Listening on http://localhost:${PORT}`)
 })
