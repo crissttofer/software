@@ -32,10 +32,10 @@ app.set('view engine','hbs')
 
 
 
-// app.get('/helloword',(req,res)=>{
-//   console.log()
-//   res.render("helloworld")
-// })
+app.get('/helloword',(req,res)=>{
+  console.log()
+  res.render("helloworld")
+})
 app.use('/',routerPrueba)
 
 
