@@ -6,14 +6,21 @@ import {engine} from "express-handlebars";
 import { __dirname } from "./utils.js";
 import helmet from "helmet";
 import cors from "cors";
-import routerPrueba from "./routes/prueba.js"
+import cookieParser from "cookie-parser";
 
+import routerPrueba from "./routes/prueba.js"
+import routerLogin from "./routes/login.js";
+
+import { PrismaClient } from "@prisma/client";
+
+const db=new PrismaClient();
 const app=express();
 const PORT=4000;
 
 app.use(morgan('dev'));
 app.use(helmet())
 app.use(cors())
+app.use(cookieParser())
 
 app.use(express.static(path.join(__dirname,'..','public')))
 app.use(express.json());
@@ -36,7 +43,9 @@ app.get('/helloword',(req,res)=>{
   console.log()
   res.render("helloworld")
 })
+
 app.use('/',routerPrueba)
+app.use("/",routerLogin)
 
 
 app.listen(PORT,()=>{

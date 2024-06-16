@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,85 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model categoria {
+  id               Int                @id @default(autoincrement())
+  nombre           String             @db.VarChar(250)
+  categoria_evento categoria_evento[]
+}
+
+model categoria_evento {
+  idEvento    Int
+  idCategoria Int
+  evento      evento    @relation(fields: [idEvento], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "categoria_evento_ibfk_1")
+  categoria   categoria @relation(fields: [idCategoria], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "categoria_evento_ibfk_2")
+
+  @@id([idEvento, idCategoria])
+  @@index([idCategoria], map: "idCategoria")
+}
+
+model estado {
+  id            Int             @id @default(autoincrement())
+  nombre        String          @db.VarChar(25)
+  estado_evento estado_evento[]
+}
+
+model estado_evento {
+  idEvento Int
+  idEstado Int
+  evento   evento @relation(fields: [idEvento], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "estado_evento_ibfk_1")
+  estado   estado @relation(fields: [idEstado], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "estado_evento_ibfk_2")
+
+  @@id([idEvento, idEstado])
+  @@index([idEstado], map: "idEstado")
+}
+
+model evento {
+  id               Int                @id @default(autoincrement())
+  titulo           String             @db.VarChar(250)
+  descripcion      String             @db.Text
+  fecha            DateTime           @db.Date
+  lugar            String?            @db.VarChar(250)
+  portada          String             @db.VarChar(250)
+  imgDescripcion   String             @db.VarChar(250)
+  categoria_evento categoria_evento[]
+  estado_evento    estado_evento[]
+  usuario_evento   usuario_evento[]
+}
+
+model rol {
+  id          Int           @id @default(autoincrement())
+  nombre      String        @db.VarChar(25)
+  rol_usuario rol_usuario[]
+}
+
+model rol_usuario {
+  idUsuario Int
+  idRol     Int
+  usuario   usuario @relation(fields: [idUsuario], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rol_usuario_ibfk_1")
+  rol       rol     @relation(fields: [idRol], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rol_usuario_ibfk_2")
+
+  @@id([idUsuario, idRol])
+  @@index([idRol], map: "idRol")
+}
+
+model usuario {
+  id             Int              @id @default(autoincrement())
+  nombre         String           @db.VarChar(250)
+  apellido       String?          @db.VarChar(250)
+  email          String           @unique(map: "email") @db.VarChar(250)
+  password       String           @db.VarChar(250)
+  rol_usuario    rol_usuario[]
+  usuario_evento usuario_evento[]
+}
+
+model usuario_evento {
+  idUsuario Int
+  idEvento  Int
+  usuario   usuario @relation(fields: [idUsuario], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "usuario_evento_ibfk_1")
+  evento    evento  @relation(fields: [idEvento], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "usuario_evento_ibfk_2")
+
+  @@id([idUsuario, idEvento])
+  @@index([idEvento], map: "idEvento")
 }
