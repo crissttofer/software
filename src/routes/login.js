@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { validateLogin,showLogin } from "../controllers/login.js";
-import { verifyToken } from "../controllers/midleware.js";
+import { validateLogin,showLogin, verifyUser, registerUser, showRegister } from "../controllers/login.js";
+import { verifyToken,verifySesion } from "../controllers/middleware.js";
 
 const router=Router()
 
 router.post("/login",validateLogin)
-router.get("/login",verifyToken,showLogin)
-
+router.get("/login",verifySesion,showLogin)
+router.post("/register",verifyUser,registerUser)
+router.get("/register",verifySesion,showRegister)
 export default router

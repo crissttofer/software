@@ -53,6 +53,56 @@ async function validateLogin(req, res) {
     }
   }
 }
-function showLogin(req, res) {}
+function showLogin(req, res) {
+  if(!req.sesion){
+    res.render("/login")
+  }else{
+    res.render("/home")
+  }
+}
+function showRegister(req,res){
+  if(!req.sesion){
+    res.render("/register")
+  }else{
+    res.redirect("/home")
+  }
+}
+async function verifyUser(req,res,next){
+  const userData=req.body
+  const userDb=db.findUnique({
+    select:{
+      email:true
+    },
+    where:{
+      email:userData.email
+    }
+  })
 
-export { validateLogin, showLogin };
+  if(userDb===null){
+    next()
+  }
+  res.redirect("/register",{message:"El usuario ya existe"})
+}
+async function registerUser(req,res){
+  const userData=req.body
+  const passwordHash=await bcrypt.hash(userData.password,10)
+  
+  await db.usuario.create({
+    data:{
+      nombre:userData.nombre,
+      apellido:userData.apellido,
+      email:userData.email,
+      password:passwordHash
+    }
+  })
+
+  res.redirect("/login")
+}
+
+export { 
+  validateLogin, 
+  showLogin,
+  verifyUser,
+  showRegister,
+  registerUser
+};
