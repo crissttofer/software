@@ -1,7 +1,7 @@
-function validateToken(req,res,next){
+function verifyToken(req,res,next){
   
 }
 
 export {
-  validateToken
+  verifyToken
 }

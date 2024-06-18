@@ -1,10 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import env from "dotenv";
-
-const db = new PrismaClient();
-
+import db from "../model/user.js"
 env.config();
 
 async function validateLogin(req, res) {
