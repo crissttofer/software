@@ -1,0 +1,25 @@
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/head/head.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<body>
+{{> head}}
+<main class="info"> 
+    <div class="navCategorias">
+        <h1 class="titelCategoria">CATEGORIAS</h1>
+        <ul class="allCategoria">
+            <li class="cardCategoria">Eventos Culturales</li>
+            <li class="cardCategoria">Eventos Deportivos</li>
+            <li class="cardCategoria">Eventos Academicos</li>
+            <li class="cardCategoria">Eventos Sociales</li>
+        </ul>
+    </div>
+    <div class="navCardInfo">
+        {{#each item}}
+            {{> cardinfo imgsrc = "/img/imgAdd/EncuentroDeFutbolFemenino.jpg"}}
+        {{/each}}
+    </div>
+</main>
+</body>
