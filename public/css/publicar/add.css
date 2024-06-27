@@ -1,0 +1,80 @@
+body{
+    background-color: #d9d9d9;
+}
+.getUser{
+    background-color: #bcbcbc;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 25px;
+    height: 40vh;
+    }
+.capFoto{
+    width: 95%;
+    height: 32vh;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+ 
+    background-color: #6691a2;
+}.capFoto>img{
+    width: 28vh;
+    height: 28vh;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 2vh;
+}
+
+
+.infoCard{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.textNav{
+    margin-top: 1vh;
+    border-top: solid 2px #fff; 
+    display: grid;
+    width: 80%;
+    height: 6vh;
+    grid-template-columns: repeat(2,1fr);
+}.navegatio{
+    display: flex;
+
+}.navegatio>p{
+    margin-top: 3vh;
+    margin-left: 15px;
+    text-decoration: underline;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 1s;
+}.navegatio>p:hover{
+    color: yellow;
+    transition: color 1s;
+}
+
+
+.publicar>button{
+    cursor: pointer;
+    color: #fff;
+    background-color: #6691a2;
+    margin-left: 40vw;
+    border: none;
+    width: 10vw;
+    border-radius: 15px;
+    padding: 2vh;
+    margin-top: 0.5vh;
+    transition: color 1s, background-color 1s;
+    
+
+}.publicar>button:hover{
+    background-color: yellow;
+    color: black;
+    transition: color 1s, background-color 1s;
+}

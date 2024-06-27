@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/home/cuerpo.css">
+
+<body>
+{{> head log = false}}
+<main class="info"> 
+    <div class="navCategorias">
+        <h1 class="titelCategoria">CATEGORIAS</h1>
+        <ul class="allCategoria">
+            <li class="cardCategoria">Eventos Culturales</li>
+            <li class="cardCategoria">Eventos Deportivos</li>
+            <li class="cardCategoria">Eventos Academicos</li>
+            <li class="cardCategoria">Eventos Sociales</li>
+        </ul>
+    </div>
+    <div class="navCardInfo">
+        {{#each item}}
+            {{> cardinfo imgsrc = "/img/imgAdd/EncuentroDeFutbolFemenino.jpg"}}
+        {{/each}}
+    </div>
+</main>
+</body>

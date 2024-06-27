@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("/img/login/portada.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    width: 100vw;
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+}
+.loginBody {
+    width: 60vw;
+    background-color: rgba(48, 43, 43, .85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.loginTitulo{
+    font-size: 5em;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-bottom: 3%;
+    color: #f0f0f0;
+}
+.loginCard{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*informacion de login texto*/
+.loginInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}.loginInfo>input{
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 30vw;
+    outline: none;
+}.loginInfo>input[type="text"]
+{
+    border-radius: 15px 15px 0 0;
+    margin: 10% 0 0 0;
+}.loginInfo>input[type="password"]
+{
+    border-radius: 0 0 15px 15px;
+    margin: 0 0 10% 0;
+}
+
+/*login extra*/
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 5%;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 25%;
+    background-color: #eee;
+  }
+  
+  
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+ 
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.loginExtra{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    
+}.loginExtra>input{
+    border-radius: 25%;
+}.loginExtra>*{
+    font-size: 1.2em;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+.loginCard>input{
+    background-color: transparent;
+    border: none;
+    color: #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 5%;
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+/*graficar el or*/
+.or{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.notline{
+    width: 6%;
+    text-align: center;
+    margin-top: 0.5%;
+    font-size: 2em;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+.line{
+    width: 25%;
+    border: #f0f0f0 solid 1px;
+    background-color: #f0f0f0;
+    height: 0.5vh;
+    margin-top: 2%;
+}
+
+
+.loginGoogle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    width: 50%;
+    cursor: pointer;
+}.loginGoogle>p{
+   font-size: 30px;
+   margin-right: 15px;
+   
+}.loginGoogle>img{
+    width: 30px;
+    height: 30px;
+}
+
+
+.loginRegistor{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    width: 50%;
+    cursor: pointer;
+}.loginRegistor>b>a{
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+}
