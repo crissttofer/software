@@ -2,13 +2,10 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: #d9d9d9;
-}
 header{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    background: #ffd232;
+    background: #ff891a;
     height: 60px;
     width: 100%;
     top: 0;
@@ -55,7 +52,6 @@ header>.sesion{
 header>.sesion>.on{
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -70,6 +66,7 @@ header>.sesion>.off{
     border-radius: 15px;
     cursor: pointer;
     color:#fff ;
+    margin-left: 60%;
     background: #1b4071;
     border: solid 1px #1b4071;
 }
@@ -105,61 +102,4 @@ header>.sesion>.off{
 }
 .campana{
     margin-right: 15px;
-}
-/*fin*/
-/*categorias*/
-.info{
-    display: grid;
-    margin-top: 60px;
-    width: 100%;
-    grid-template-columns: repeat(4,1fr);
-}
-.navCategorias{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    background-color: #ffffff;
-    width: 20%;
-    left: 2%;
-    padding: 10px;
-    margin: 15px auto ;
-    border-radius: 15px;
-    height: 80vh;
-    position: fixed;
-}
-.allCategoria>*{
-    list-style: none;
-    color: #000;
-    text-align: center;
-    padding: 20px;
-    cursor: pointer;
-}.allCategoria>*:hover{
-    background-color: #d9d9d9;
-    color: #fff;
-}
-.navCardInfo{
-    grid-column-start: 2;
-    grid-column-end: 5;
-    display: grid;
-    padding-top: 15px;
-    grid-template-columns: repeat(3,1fr);
-   
-}.TitleCardInfo{
-    text-align: center;
-    font-size: 30px;
-    text-decoration: underline;
-}.cardInfo{
-    width: 80%;
-
-    background-color: #fff;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-bottom: 15px;
-
-}.imgCardInfo{
-    width: 100%;
-    border-radius: 15px 15px  0 0;
-    height: 250px;
-}.infoCardInfo{
-    padding: 10px;
-    font-size: 15px;
 }

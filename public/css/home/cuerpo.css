@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #d9d9d9;
+}
+/*fin*/
+/*categorias*/
+.info{
+    display: grid;
+    margin-top: 60px;
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+}
+.navCategorias{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #ffffff;
+    width: 20%;
+    left: 2%;
+    padding: 10px;
+    margin: 15px auto ;
+    border-radius: 15px;
+    height: 80vh;
+    position: fixed;
+}
+.allCategoria>*{
+    list-style: none;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}.allCategoria>*:hover{
+    background-color: #d9d9d9;
+    color: #fff;
+}
+.navCardInfo{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    display: grid;
+    padding-top: 15px;
+    grid-template-columns: repeat(3,1fr);
+   
+}

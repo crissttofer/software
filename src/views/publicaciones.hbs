@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/publicar/add.css">
+<body>
+    {{> head}}
+    <div class="getUser">
+        <div class="capFoto">
+            <img src="/img/prueba.jpg" alt="">
+        </div>
+        
+        <div class="textNav">
+            <div class="nav">
+                <p><b>Mis Eventos</b></p>
+                <p><b>Eventos Suscriptos</b></p>
+            </div>
+            <div class="publicar">
+                <button>
+                    Publicar Evento
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="infoCard">
+        {{#each item}}
+            {{> cardinfo imgsrc = "/img/imgAdd/EncuentroDeFutbolFemenino.jpg"}}
+        {{/each}}
+    </div>
+</body>

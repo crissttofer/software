@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background-image: url("/img/login/portada.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.registro{
+    background-color: #a5a58f85;
+    width: 45%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 0;
+}.registro>form>h1{
+    font-size: 40px;
+}.cuenta{
+    color: black;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 25px;
+
+}.infoName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}.cardName>p{
+    margin-left: 2%;
+    margin-top: 15px;
+    font-size: 25px;
+}.infoName>.cardName{
+    margin-left: 15px;
+
+}input{
+    border: black 2px solid;
+    border-radius: 15px;
+    background-color: #fff;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 25px;
+    width: 90%;
+}.btn{
+    background-color: black;
+    text-decoration: underline;
+    color: #fff;
+    margin-top: 15px;
+    cursor: pointer;
+}button{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 25px;
+}button>img{
+    width: 5vh;
+    height: 5vh;
+}.otherInfo>p{
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 15px;
+    font-size: 25px;
+}
+.separacion{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin: auto;
+}.line{
+    border-top: solid #fff 2px;
+    width: 48%;
+    margin: 10px;
+}.separacion>p{
+    width: 4%;
+    font-size: 25px;
+
+}
