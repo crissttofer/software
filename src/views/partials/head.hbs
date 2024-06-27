@@ -4,13 +4,13 @@
     <div class="nav">
         <ul>
             <li>
-                <a href="">Inicio</a>
+                <a href="home">Inicio</a>
             </li>
             <li>
-                <a href="">Eventos</a>
+                <a href="evento">Eventos</a>
             </li>
             <li>
-                <a href="">Acerca De</a>
+                <a href="publicaciones">Acerca De</a>
             </li>
         </ul>
     </div>
@@ -18,27 +18,10 @@
         <h1>ACADEMIC HUB</h1>
     </div>
     <div class="sesion">
-        <div class="off">
-            <a href="login" class="boton">
-                Iniciar Sesion
-            </a>
-        </div>
-        <div class="on activate">
-            <div class="todo">
-              
-                <span class="material-symbols-outlined headIcon campana">
-                    notifications
-                </span>
-                <span class="material-symbols-outlined headIcon">
-                    account_circle
-                </span>
-                <span class="headIcon">
-                    Usuario
-                </span>
-                <span class="material-symbols-outlined headIcon">
-                    keyboard_arrow_down
-                </span>
-            </div>
-        </div>
+        {{#if log}}
+            {{> logeado}}
+        {{else}}
+            {{> nologeado}}
+        {{/if}}
     </div>
 </header>

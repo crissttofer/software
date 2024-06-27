@@ -6,6 +6,8 @@ function view(req,res){
   req.params.id === 'home' ? 'Home' :
   req.params.id === 'login' ? 'Login':
   req.params.id === 'evento' ? 'Evento':
+  req.params.id === 'publicaciones' ? 'Publicaciones':
+  req.params.id === 'registro' ? 'Registro':
    'Error';
 
   res.render(req.params.id, {

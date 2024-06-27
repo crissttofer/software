@@ -43,10 +43,10 @@ body{
     width: 80%;
     height: 6vh;
     grid-template-columns: repeat(2,1fr);
-}.nav{
+}.navegatio{
     display: flex;
 
-}.nav>p{
+}.navegatio>p{
     margin-top: 3vh;
     margin-left: 15px;
     text-decoration: underline;
@@ -54,7 +54,7 @@ body{
     font-size: 20px;
     cursor: pointer;
     transition: color 1s;
-}.nav>p:hover{
+}.navegatio>p:hover{
     color: yellow;
     transition: color 1s;
 }
