@@ -20,7 +20,7 @@ function verifyToken(req,res,next){
 function verifySesion(req,res,next){
   const token=req.cookies.token
 
-  if(token==="undefined"){
+  if(typeof token==="undefined"){
     req.sesion=false
     next()
   }else{

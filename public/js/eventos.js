@@ -13,3 +13,8 @@ function categoriaEventos(eventoId){
     }
   })
 }
+
+export {
+  eventos,
+  categoriaEventos
+}

@@ -18,13 +18,11 @@ async function validateLogin(req, res) {
     },
   });
   if (userDb === null) {
-    res.json({ message: "datos invalidos" }); // test
-    // res.render("login",{message:"Datos Invalidos"})
+    res.render("login",{message:"Datos Invalidos"})
   } else {
     const validado = await bcrypt.compare(userData.password, userDb.password);
     if (!validado) {
-      res.json({ message: "datos invalidos" }); //test
-      // res.render("login",{message:"Datos Invalidos"})
+      res.render("login",{message:"Datos Invalidos"})
     } else {
       const userLoged = {
         iduser: userDb.id,
@@ -54,15 +52,16 @@ async function validateLogin(req, res) {
   }
 }
 function showLogin(req, res) {
+  console.log(req.sesion)
   if(!req.sesion){
-    res.render("/login")
+    res.render("login")
   }else{
-    res.render("/home")
+    res.redirect("/home")
   }
 }
 function showRegister(req,res){
   if(!req.sesion){
-    res.render("/register")
+    res.render("register")
   }else{
     res.redirect("/home")
   }

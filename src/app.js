@@ -11,6 +11,9 @@ import cookieParser from "cookie-parser";
 import routerPrueba from "./routes/prueba.js"
 import routerLogin from "./routes/login.js";
 import routerApiEvento from "./routes/apiEventos.js"
+import routerHome from "./routes/home.js";
+import routerEvento from "./routes/evento.js";
+import routerUsuario from "./routes/usuario.js";
 
 import db from "./model/user.js";
 
@@ -47,6 +50,9 @@ app.get('/helloword',(req,res)=>{
 app.use('/',routerPrueba)
 app.use("/",routerLogin)
 app.use("/",routerApiEvento)
+app.use("/",routerHome)
+app.use("/",routerEvento)
+app.use("/",routerUsuario)
 
 
 app.listen(PORT,()=>{
