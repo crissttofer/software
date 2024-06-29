@@ -6,6 +6,6 @@ const router=Router()
 
 router.post("/login",validateLogin)
 router.get("/login",verifySesion,showLogin)
-router.post("/register",registerUser)
-router.get("/register",verifySesion,showRegister)
+router.post("/registro",registerUser)
+router.get("/registro",verifySesion,showRegister)
 export default router

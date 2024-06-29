@@ -2,7 +2,7 @@
 <body>
     <div class="registro">
        
-        <form action="">
+        <form action="/register" method="post">
              <h1>Crear cuenta</h1>
             <div class="cuenta">
                 <p>Ya tienes cuenta? <a href="login">Iniciar sesion</a></p>
@@ -10,32 +10,32 @@
             <div class="infoName">
                 <div class="cardName">
                     <p>Nombre*</p>
-                    <input type="text" name="" id="" required>
+                    <input type="text" name="nombre" id="" required>
                 </div>
                 <div class="cardName">
                     <p>Apellido*</p>
-                    <input type="text" name="" id="" required>
+                    <input type="text" name="apellido" id="" required>
                 </div>
             </div>
 
             <div class="otherInfo">
                 <p>correo*</p>
-                <input type="email" required>
+                <input type="email" name="email" required>
                 <p>Nombre de Usuario</p>
-                <input type="text" required>
+                <input type="text" name="usernName" required>
                 <div class="infoName">
                     <div class="cardName">
                     <p>Codigo Estudiante*</p>
-                    <input type="text" name="" id="" required>
+                    <input type="text" name="codigoEstu" id="" required>
                     </div>
                     <div class="cardName">
                     <p>Numero de telefono*</p>
-                    <input type="text" name="" id="" required>
+                    <input type="text" name="telefono" id="" required>
                     </div>
                 </div>
 
                 <p>Contraseña</p>
-                <input type="text" required>
+                <input type="text" name="password" required>
                 <p>Repetir Contraseña</p>
                 <input type="text" required>
             </div>

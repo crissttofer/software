@@ -107,7 +107,7 @@ async function registerUser(req,res){
 
     res.redirect("/login")
   }else{
-    res.redirect("/register")
+    res.redirect("/registro")
   }
   
 }

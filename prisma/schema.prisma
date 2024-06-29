@@ -100,8 +100,10 @@ model usuario_eventopublicado {
 
 model usuarios {
   Id_usuario              Int                       @id @default(autoincrement())
+  Alias                   String                    @db.VarChar(50)
   Nombre_usuario          String                    @db.VarChar(20)
   Apellido_usuario        String                    @db.VarChar(50)
+  Codigo_estudiante       String                    @db.VarChar(20)
   Email                   String                    @unique(map: "Email") @db.VarChar(50)
   Telefono                String?                   @db.VarChar(9)
   Password                String                    @db.VarChar(255)
