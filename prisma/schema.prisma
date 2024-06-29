@@ -8,82 +8,104 @@ datasource db {
 }
 
 model categoria {
-  id               Int                @id @default(autoincrement())
-  nombre           String             @db.VarChar(250)
+  Id_categoria     Int                @id @default(autoincrement())
+  Nombre_categoria String             @db.VarChar(50)
   categoria_evento categoria_evento[]
 }
 
 model categoria_evento {
-  idEvento    Int
-  idCategoria Int
-  evento      evento    @relation(fields: [idEvento], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "categoria_evento_ibfk_1")
-  categoria   categoria @relation(fields: [idCategoria], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "categoria_evento_ibfk_2")
+  Id_evento    Int
+  Id_categoria Int
+  evento       evento    @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "categoria_evento_ibfk_1")
+  categoria    categoria @relation(fields: [Id_categoria], references: [Id_categoria], onDelete: NoAction, onUpdate: NoAction, map: "categoria_evento_ibfk_2")
 
-  @@id([idEvento, idCategoria])
-  @@index([idCategoria], map: "idCategoria")
+  @@id([Id_evento, Id_categoria])
+  @@index([Id_categoria], map: "Id_categoria")
 }
 
 model estado {
-  id            Int             @id @default(autoincrement())
-  nombre        String          @db.VarChar(25)
+  Id_estado     Int             @id @default(autoincrement())
+  nombre_estado String          @db.VarChar(50)
   estado_evento estado_evento[]
 }
 
 model estado_evento {
-  idEvento Int
-  idEstado Int
-  evento   evento @relation(fields: [idEvento], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "estado_evento_ibfk_1")
-  estado   estado @relation(fields: [idEstado], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "estado_evento_ibfk_2")
+  Id_evento Int    @unique(map: "Id_evento")
+  Id_estado Int
+  evento    evento @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "estado_evento_ibfk_1")
+  estado    estado @relation(fields: [Id_estado], references: [Id_estado], onDelete: NoAction, onUpdate: NoAction, map: "estado_evento_ibfk_2")
 
-  @@id([idEvento, idEstado])
-  @@index([idEstado], map: "idEstado")
+  @@id([Id_evento, Id_estado])
+  @@index([Id_estado], map: "Id_estado")
 }
 
 model evento {
-  id               Int                @id @default(autoincrement())
-  titulo           String             @db.VarChar(250)
-  descripcion      String             @db.Text
-  fecha            DateTime           @db.Date
-  lugar            String?            @db.VarChar(250)
-  portada          String             @db.VarChar(250)
-  imgDescripcion   String             @db.VarChar(250)
-  categoria_evento categoria_evento[]
-  estado_evento    estado_evento[]
-  usuario_evento   usuario_evento[]
+  Id_evento               Int                       @id @default(autoincrement())
+  Nombre_evento           String                    @db.VarChar(255)
+  Fecha_evento            DateTime                  @db.Date
+  Ubicacion_evento        String                    @db.VarChar(100)
+  Descripcion_evento      String?                   @db.Text
+  Flayer_evento           String                    @db.VarChar(50)
+  Portada_Evento          String                    @db.VarChar(50)
+  Modalidad_evento        String                    @db.VarChar(50)
+  Fecha_publicacion       DateTime?                 @db.Date
+  asistentes_evento       asistentes_evento[]
+  categoria_evento        categoria_evento[]
+  estado_evento           estado_evento?
+  eventos_publicados      eventos_publicados?
+  usuario_eventopublicado usuario_eventopublicado[]
 }
 
 model rol {
-  id          Int           @id @default(autoincrement())
-  nombre      String        @db.VarChar(25)
+  ID_rol      Int           @id @default(autoincrement())
+  Nombre_rol  String        @db.VarChar(50)
   rol_usuario rol_usuario[]
 }
 
 model rol_usuario {
-  idUsuario Int
-  idRol     Int
-  usuario   usuario @relation(fields: [idUsuario], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rol_usuario_ibfk_1")
-  rol       rol     @relation(fields: [idRol], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rol_usuario_ibfk_2")
+  Id_rol     Int
+  Id_usuario Int      @unique(map: "Id_usuario")
+  rol        rol      @relation(fields: [Id_rol], references: [ID_rol], onDelete: NoAction, onUpdate: NoAction, map: "rol_usuario_ibfk_1")
+  usuarios   usuarios @relation(fields: [Id_usuario], references: [Id_usuario], onDelete: NoAction, onUpdate: NoAction, map: "rol_usuario_ibfk_2")
 
-  @@id([idUsuario, idRol])
-  @@index([idRol], map: "idRol")
+  @@id([Id_rol, Id_usuario])
 }
 
-model usuario {
-  id             Int              @id @default(autoincrement())
-  nombre         String           @db.VarChar(250)
-  apellido       String?          @db.VarChar(250)
-  email          String           @unique(map: "email") @db.VarChar(250)
-  password       String           @db.VarChar(250)
-  rol_usuario    rol_usuario[]
-  usuario_evento usuario_evento[]
+model asistentes_evento {
+  Id_evento        Int
+  Id_usuario       Int
+  Fecha_asistencia DateTime @db.Date
+  evento           evento   @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "asistentes_evento_ibfk_1")
+  usuarios         usuarios @relation(fields: [Id_usuario], references: [Id_usuario], onDelete: NoAction, onUpdate: NoAction, map: "asistentes_evento_ibfk_2")
+
+  @@id([Id_evento, Id_usuario])
+  @@index([Id_usuario], map: "Id_usuario")
 }
 
-model usuario_evento {
-  idUsuario Int
-  idEvento  Int
-  usuario   usuario @relation(fields: [idUsuario], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "usuario_evento_ibfk_1")
-  evento    evento  @relation(fields: [idEvento], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "usuario_evento_ibfk_2")
+model eventos_publicados {
+  Id_evento         Int      @id
+  Fecha_publicacion DateTime @db.Date
+  evento            evento   @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "eventos_publicados_ibfk_1")
+}
 
-  @@id([idUsuario, idEvento])
-  @@index([idEvento], map: "idEvento")
+model usuario_eventopublicado {
+  Id_evento  Int
+  Id_usuario Int
+  evento     evento   @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "usuario_eventopublicado_ibfk_1")
+  usuarios   usuarios @relation(fields: [Id_usuario], references: [Id_usuario], onDelete: NoAction, onUpdate: NoAction, map: "usuario_eventopublicado_ibfk_2")
+
+  @@id([Id_evento, Id_usuario])
+  @@index([Id_usuario], map: "Id_usuario")
+}
+
+model usuarios {
+  Id_usuario              Int                       @id @default(autoincrement())
+  Nombre_usuario          String                    @db.VarChar(20)
+  Apellido_usuario        String                    @db.VarChar(50)
+  Email                   String                    @unique(map: "Email") @db.VarChar(50)
+  Telefono                String?                   @db.VarChar(9)
+  Password                String                    @db.VarChar(255)
+  asistentes_evento       asistentes_evento[]
+  rol_usuario             rol_usuario?
+  usuario_eventopublicado usuario_eventopublicado[]
 }

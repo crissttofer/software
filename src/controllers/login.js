@@ -6,28 +6,28 @@ env.config();
 
 async function validateLogin(req, res) {
   const userData = req.body;
-  const userDb = await db.usuario.findUnique({
+  const userDb = await db.usuarios.findUnique({
     select: {
-      id: true,
-      nombre: true,
-      email: true,
-      password: true,
+      Id_usuario: true,
+      Nombre_usuario: true,
+      Email: true,
+      Password: true,
     },
     where: {
-      email: userData.email,
+      Email: userData.email,
     },
   });
   if (userDb === null) {
     res.render("login",{message:"Datos Invalidos"})
   } else {
-    const validado = await bcrypt.compare(userData.password, userDb.password);
+    const validado = await bcrypt.compare(userData.password, userDb.Password);
     if (!validado) {
       res.render("login",{message:"Datos Invalidos"})
     } else {
       const userLoged = {
-        iduser: userDb.id,
-        nombre: userDb.nombre,
-        email: userDb.email,
+        iduser: userDb.Id_usuario,
+        nombre: userDb.Nombre_usuario,
+        email: userDb.Email,
       };
       const optionsToken = {
         expiresIn: "30s",
@@ -61,41 +61,55 @@ function showLogin(req, res) {
 }
 function showRegister(req,res){
   if(!req.sesion){
-    res.render("register")
+    res.render("registro")
   }else{
     res.redirect("/home")
   }
 }
 async function verifyUser(req,res,next){
   const userData=req.body
-  const userDb=db.findUnique({
+  const userDb=await db.usuarios.findUnique({
     select:{
-      email:true
+      Email:true
     },
     where:{
-      email:userData.email
+      Email:userData.email
     }
   })
-
   if(userDb===null){
     next()
   }
-  res.redirect("/register",{message:"El usuario ya existe"})
+  res.render("registro",{message:"El usuario ya existe"})
+  return
 }
 async function registerUser(req,res){
   const userData=req.body
-  const passwordHash=await bcrypt.hash(userData.password,10)
-  
-  await db.usuario.create({
-    data:{
-      nombre:userData.nombre,
-      apellido:userData.apellido,
-      email:userData.email,
-      password:passwordHash
+  const userDb=await db.usuarios.findUnique({
+    select:{
+      Email:true
+    },
+    where:{
+      Email:userData.email
     }
   })
+  if(userDb===null){
+    const passwordHash=await bcrypt.hash(userData.password,10)
+  
+    await db.usuarios.create({
+      data:{
+        Nombre_usuario:userData.nombre,
+        Apellido_usuario:userData.apellido,
+        Email:userData.email,
+        Telefono:userData.telefono,
+        Password:passwordHash
+      }
+    })
 
-  res.redirect("/login")
+    res.redirect("/login")
+  }else{
+    res.redirect("/register")
+  }
+  
 }
 
 export { 

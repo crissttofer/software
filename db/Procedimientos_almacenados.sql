@@ -17,11 +17,11 @@ CREATE PROCEDURE AgregarUsuario (
     IN p_Apellido_usuario VARCHAR(50),
     IN p_Email VARCHAR(50),
     IN p_Telefono VARCHAR(9),
-    IN p_Contraseña VARCHAR(50)
+    IN p_Password VARCHAR(50)
 )
 BEGIN
-    INSERT INTO Usuarios (Nombre_usuario, Apellido_usuario, Email, Telefono, Contraseña) 
-    VALUES (p_Nombre_usuario, p_Apellido_usuario, p_Email, p_Telefono, p_Contraseña);
+    INSERT INTO Usuarios (Nombre_usuario, Apellido_usuario, Email, Telefono, Password) 
+    VALUES (p_Nombre_usuario, p_Apellido_usuario, p_Email, p_Telefono, p_Password);
 END
 
 

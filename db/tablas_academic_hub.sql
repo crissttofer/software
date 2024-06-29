@@ -20,7 +20,7 @@ CREATE TABLE Usuarios (
     Apellido_usuario VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL UNIQUE,
     Telefono VARCHAR(9),
-    Contraseña VARCHAR(50) NOT NULL
+    Password VARCHAR(255) NOT NULL
 );
 
 
