@@ -3,31 +3,31 @@ import db from "../model/user.js"
 async function todoEventos(req,res){
   const eventos = await db.evento.findMany({
     select:{
-      id:true,
-      titulo:true,
-      descripcion:true,
-      portada:true
+      Id_evento:true,
+      Nombre_evento:true,
+      Descripcion_evento:true,
+      Portada_Evento:true
     }
   })
   res.json(eventos)
 }
 async function categoriaEvento(req,res){
-  const nombreCategoria=req.params.categoria
+  const Categoria=req.params.categoria
   const eventos= await db.evento.findMany({
     where:{
       categoria_evento:{
         some:{
           categoria:{
-            nombre:nombreCategoria
+            Nombre_categoria:Categoria
           }
         }
       }
     },
     select:{
-      id:true,
-      titulo:true,
-      descripcion:true,
-      portada:true
+      Id_evento:true,
+      Nombre_evento:true,
+      Descripcion_evento:true,
+      Portada_Evento:true
     }
   })
   res.json(eventos)

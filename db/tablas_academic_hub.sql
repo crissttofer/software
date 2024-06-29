@@ -16,8 +16,10 @@ CREATE TABLE Rol (
 DROP TABLE IF EXISTS Usuarios;
 CREATE TABLE Usuarios (
     Id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    Alias VARCHAR(50) NOT NULL,
     Nombre_usuario VARCHAR(20) NOT NULL,
     Apellido_usuario VARCHAR(50) NOT NULL,
+    Codigo_estudiante VARCHAR(20) NOT NULL,
     Email VARCHAR(50) NOT NULL UNIQUE,
     Telefono VARCHAR(9),
     Password VARCHAR(255) NOT NULL
