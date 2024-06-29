@@ -93,6 +93,8 @@ header>.sesion>.off{
 .headIcon{
     font-size: 30px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 .todo{
     display: flex;

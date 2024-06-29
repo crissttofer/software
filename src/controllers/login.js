@@ -99,7 +99,9 @@ async function registerUser(req,res){
       data:{
         Nombre_usuario:userData.nombre,
         Apellido_usuario:userData.apellido,
+        Alias:userData.alias,
         Email:userData.email,
+        Codigo_estudiante:userData.codigoEstu,
         Telefono:userData.telefono,
         Password:passwordHash
       }
