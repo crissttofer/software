@@ -45,7 +45,7 @@ async function registerEvent(req,res){
   await db.usuario_eventopublicado.create({
     data:{
       Id_evento:eventoDb.Id_evento,
-      Id_usuario:tokenDecoded.id
+      Id_usuario:tokenDecoded.iduser
     }
   })
   res.send("evento publicado")
