@@ -93,7 +93,7 @@ CREATE TABLE Asistentes_evento (
 DROP TABLE IF EXISTS Categoria;
 CREATE TABLE Categoria (
     Id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    Nombre_categoria VARCHAR(50) NOT NULL
+    Nombre_categoria VARCHAR(50) UNIQUE NOT NULL
 );
 
 -- Tabla intermedia: Relaciona un evento con una categoría.
