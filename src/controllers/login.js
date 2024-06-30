@@ -113,11 +113,16 @@ async function registerUser(req,res){
   }
   
 }
+function closeSesion(req,res){
+  res.clearCookie('token')
+  res.redirect("/home")
+}
 
 export { 
   validateLogin, 
   showLogin,
   verifyUser,
   showRegister,
-  registerUser
+  registerUser,
+  closeSesion
 };

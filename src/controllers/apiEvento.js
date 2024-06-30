@@ -1,4 +1,8 @@
+import jwt from "jsonwebtoken"
+import env from "dotenv"
 import db from "../model/user.js"
+
+env.config()
 
 async function todoEventos(req,res){
   const eventos = await db.evento.findMany({
@@ -41,9 +45,30 @@ async function eventoEspecifico(req,res){
   })
   res.json(evento)
 }
-
+async function eventoUsuario(req,res){
+  const userToken= await jwt.verify(req.cookies.token,process.env.SECRET_KEY)
+  const eventos = await db.evento.findMany({
+    where:{
+      usuario_eventopublicado:{
+        some:{
+          usuarios:{
+            Id_usuario:parseInt(userToken.iduser)
+          }
+        }
+      }
+    },
+    select:{
+      Id_evento:true,
+      Nombre_evento:true,
+      Descripcion_evento:true,
+      Portada_Evento:true
+    }
+  })
+  res.json(eventos)
+}
 export {
   todoEventos,
   categoriaEvento,
-  eventoEspecifico
+  eventoEspecifico,
+  eventoUsuario
 }
