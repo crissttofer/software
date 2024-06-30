@@ -32,8 +32,18 @@ async function categoriaEvento(req,res){
   })
   res.json(eventos)
 }
+async function eventoEspecifico(req,res){
+  const eventoId=parseInt(req.params.id)
+  const evento=await db.evento.findUnique({
+    where:{
+      Id_evento:eventoId
+    }
+  })
+  res.json(evento)
+}
 
 export {
   todoEventos,
-  categoriaEvento
+  categoriaEvento,
+  eventoEspecifico
 }
