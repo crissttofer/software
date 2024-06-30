@@ -31,6 +31,14 @@ async function registerEvent(req,res){
   const eventData=req.body
   const userCookie=req.cookies.token
   const tokenDecoded=await jwt.verify(userCookie,process.env.SECRET_KEY)
+  const categoria=await db.categoria.findUnique({
+    where:{
+      Nombre_categoria:eventData.categoria
+    },
+    select:{
+      Id_categoria:true
+    }
+  })
   const eventoDb=await db.evento.create({
     data:{
       Nombre_evento:eventData.nombreEvento,
@@ -46,6 +54,12 @@ async function registerEvent(req,res){
     data:{
       Id_evento:eventoDb.Id_evento,
       Id_usuario:tokenDecoded.iduser
+    }
+  })
+  await db.categoria_evento.create({
+    data:{
+      Id_evento:eventoDb.Id_evento,
+      Id_categoria:categoria.Id_categoria
     }
   })
   res.send("evento publicado")

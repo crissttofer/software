@@ -9,7 +9,7 @@ datasource db {
 
 model categoria {
   Id_categoria     Int                @id @default(autoincrement())
-  Nombre_categoria String             @db.VarChar(50)
+  Nombre_categoria String             @unique(map: "Nombre_categoria") @db.VarChar(50)
   categoria_evento categoria_evento[]
 }
 
