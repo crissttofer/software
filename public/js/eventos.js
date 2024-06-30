@@ -1,5 +1,5 @@
-async function eventos(eventoId){
-  const eventos = document.getElementById(eventoId);
+async function eventos(){
+  const eventos = document.querySelector(".navCardInfo");
   const data = fetch("http://localhost:4000/api/eventos")
   const json=await data.json()
 }

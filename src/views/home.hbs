@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/home/cuerpo.css">
+<link rel="stylesheet" href="/css/publicar/infocard.css">
 
 <body>
 {{> head log = estadoSesion}}
@@ -17,5 +18,14 @@
             {{> cardinfo imgsrc = "/img/imgAdd/EncuentroDeFutbolFemenino.jpg"}}
         {{/each}}
     </div>
+    <template id="templateCardEvent">
+        <div class="cardInfo">
+            <img src="{{imgsrc}}" alt="" class="imgCardInfo">
+            <h1 class="TitleCardInfo">Encuentro De Futbol Femenino</h1>
+            <p class="infoCardInfo">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex labore possimus ut ipsa iusto dolore pariatur? Voluptate eius, dolorum quo ipsam laudantium excepturi facilis dolorem quidem blanditiis eos, aut quis.
+            </p>
+        </div>
+    </template>
 </main>
 </body>
