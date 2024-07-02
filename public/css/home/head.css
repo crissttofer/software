@@ -1,94 +1,136 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-header{
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        background: #ed742e;
+        height: 60px;
+        width: 100%;
+        top: 0;
+        position: fixed;
+    }
+    header>.nav{
+        height: 100%;
+    }header>.nav>ul{
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(
+            3,1fr
+        );
+        align-items: center;
+    }header>.nav>ul>li{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }header>.nav>ul>li>*{
+        text-decoration: none;
+        color: #201a06;
+        font-size: 20px; 
+        transform: underline 2s;
+    }header>.nav>ul>li>*:hover{
+        color: aliceblue;
+        text-decoration: underline;
+        transition: color .5s, text-decoration 0.5s;
+    }
+
+    header>.name{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }header>.name>h1{
+        cursor: pointer;
+    }
+    header>.sesion{
+        height: 100%;
+        width: 100%;
+    }
+    header>.sesion>.on{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header>.sesion>.off{
+        display: none;
+        visibility: hidden;
+    }
+
+    .on>.boton{
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        color:#fff ;
+        margin-left: 60%;
+        background: #1b4071;
+        border: solid 1px #1b4071;
+    }
+
+
+    .all{
+        display: flex;
+    }
+    .user{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    background: #ff891a;
-    height: 60px;
-    width: 100%;
-    top: 0;
-    position: fixed;
-}
-header>.nav{
-    height: 100%;
-}header>.nav>ul{
-    display: grid;
-    height: 100%;
-    grid-template-columns: repeat(
-        3,1fr
-    );
-    align-items: center;
-}header>.nav>ul>li{
+    grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*activar icons*/
+    .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+    }
+    .headIcon{
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .todo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .campana{
+        margin-right: 15px;
+    }
+
+li{
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}header>.nav>ul>li>*{
     text-decoration: none;
-    color: #201a06;
-    font-size: 20px; 
-    transform: underline 2s;
-}header>.nav>ul>li>*:hover{
-    color: aliceblue;
-    text-decoration: underline;
-    transition: color .5s, text-decoration 0.5s;
 }
-
-header>.name{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}header>.name>h1{
-    cursor: pointer;
-}
-header>.sesion{
-    height: 100%;
-    width: 100%;
-}
-header>.sesion>.on{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-header>.sesion>.off{
+.flexible{
     display: none;
-    visibility: hidden;
+    margin-left: 15px;
+    background-color: transparent;
 }
+.select_all:hover .flexible{
+    position: fixed;
+    display: grid;
 
-.on>.boton{
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    color:#fff ;
-    margin-left: 60%;
-    background: #1b4071;
-    border: solid 1px #1b4071;
+
 }
-
-
-.all{
+.flexible>li{
+    height: 30px;
     display: flex;
-}
-.user{
-   display: grid;
-   grid-template-columns: repeat(2,1fr);
     align-items: center;
     justify-content: center;
+    width: 130%;
+    margin-left: -30px;
+    background-color: #fff;
 }
-
-/*activar icons*/
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.flexible>li:hover{
+    transition:  background-color 1s;
+    background-color: #ff891a;
 }
 .headIcon{
     font-size: 30px;
@@ -96,12 +138,12 @@ header>.sesion>.off{
     text-decoration: none;
     color: black;
 }
-.todo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.flexible>li:hover a{
+    transition: color .5s;
+    color: #fff;
 }
-.campana{
-    margin-right: 15px;
+.flexible>li>*{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
 }
