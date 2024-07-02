@@ -1,16 +1,18 @@
 <link rel="stylesheet" href="/css/evento/evento.css">
 <body>
 {{> head log = estadoSesion}}
+
+    <template id="tEvento">
     <div class="evento">
         <div class="encabezado">
             <h1 class="eventoTitle">Encuentro De Futbol Femenino</h1>
             <h3>FECHA: 11/12/2024</h3>
-            <p>Ubicacion: Auditorio epis</p>
+            <p id="ubicacion">Ubicacion: Auditorio epis</p>
         </div>
         <div class="cuerpo">
             <div class="infoText">
                 <h2>Descripcion:</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa harum obcaecati beatae optio dignissimos, officiis ratione? Debitis, cupiditate! Enim perspiciatis debitis dolores temporibus tempore at recusandae eius suscipit, quaerat quasi veniam adipisci nisi consequatur alias repellat! Unde quia quisquam porro vel reiciendis quam nostrum, impedit deleniti fugit! Eaque, praesentium earum.</p>
+                <p id="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa harum obcaecati beatae optio dignissimos, officiis ratione? Debitis, cupiditate! Enim perspiciatis debitis dolores temporibus tempore at recusandae eius suscipit, quaerat quasi veniam adipisci nisi consequatur alias repellat! Unde quia quisquam porro vel reiciendis quam nostrum, impedit deleniti fugit! Eaque, praesentium earum.</p>
             </div>
             <div class="infoImg">
                 <img src="/img/login/portada.jpg" alt="">
@@ -22,4 +24,5 @@
            </button>
         </div>
     </div>
+    </template>
 </body>
