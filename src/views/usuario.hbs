@@ -1,4 +1,6 @@
    <link rel="stylesheet" href="/css/publicar/add.css">
+   <link rel="stylesheet" href="/css/publicar/infocard.css">
+   <link rel="stylesheet" href="/css/home/cuerpo.css">
 <body>
  {{> head log = estadoSesion}}
  
@@ -19,9 +21,17 @@
             </div>
         </div>
     </div>
-    <div class="infoCard">
-        {{#each item}}
-            {{> cardinfo imgsrc = "/img/imgAdd/EncuentroDeFutbolFemenino.jpg"}}
-        {{/each}}
+    <div class="infoCard" id="infoCardUser">
     </div>
+    <template id="TinfoCardUser">
+        <div class="cardInfo">
+            <a href="" class="noDecoration">
+                <img src="" alt="" class="imgCardInfo">
+                <h1 class="TitleCardInfo"></h1>
+                <p class="infoCardInfo">
+                </p>
+            </a>
+        </div>
+    </template>
+    <script src="/js/ajaxUsuario.js" type="module"></script>
 </body>
