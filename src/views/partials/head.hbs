@@ -1,27 +1,23 @@
 <link rel="stylesheet" href="/css/home/head.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <header>
-    <div class="nav">
-        <ul>
-            <li>
-                <a href="/home">Inicio</a>
-            </li>
-            <li>
-                <a href="/evento">Eventos</a>
-            </li>
-            <li>
-                <a href="/publicaciones">Acerca De</a>
-            </li>
-        </ul>
-    </div>
-    <div class="name">
-        <h1>ACADEMIC HUB</h1>
-    </div>
-    <div class="sesion">
-        {{#if log}}
-            {{> logeado}}
-        {{else}}
-            {{> nologeado}}
-        {{/if}}
-    </div>
+        <div class="nav">
+            <ul>
+                <li><a href="home">Inicio</a></li>
+                <li><a href="evento">Eventos</a></li>
+                <li><a href="publicaciones">Acerca De</a></li>
+            </ul>
+        </div>
+        <div class="name">
+            <h1>ACADEMIC HUB</h1>
+        </div>
+        <div class="sesion">
+
+            {{#if log}}
+                {{> logeado}}
+            {{else}}
+                {{> nologeado}}
+            {{/if}}
+        </div>
+    </header>
 </header>
