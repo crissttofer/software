@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken"
 import env from "dotenv"
 import db from "../model/user.js"
+import cookieParser from "cookie-parser"
 
 env.config()
 
@@ -66,9 +67,21 @@ async function eventoUsuario(req,res){
   })
   res.json(eventos)
 }
+async function participarEvento(req,res){
+  const cookieToken=req.cookies.token
+  if(typeof cookieToken==="undefined"){
+    res.json({message:"Registrate para participar"})
+    return
+  }else{
+    const tokenDecoded=jwt.verify(req.cookies.token,process.env.SECRET_KEY)
+    // await db.
+    res.json(tokenDecoded)
+  }
+}
 export {
   todoEventos,
   categoriaEvento,
   eventoEspecifico,
-  eventoUsuario
+  eventoUsuario,
+  participarEvento
 }

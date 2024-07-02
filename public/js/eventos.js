@@ -50,7 +50,7 @@ async function infoEvento(){
   try{
     const url= new URL(window.location.href)
     const params=new URLSearchParams(url.search)
-    const body=document.querySelector("body")
+    const body=document.querySelector(".evento")
     const template = document.getElementById("tEvento").content
     const data =await fetch(`http://localhost:4000/api/evento/${params.get('v')}`)
     const json=await data.json()
@@ -65,9 +65,28 @@ async function infoEvento(){
   }catch{
   }
 }
+async function botonParticipar(){
+  try{
+    document.addEventListener("click",async (e)=>{
+      const btn=document.getElementById("botonParticipar")
+      const url = new URL(window.location.href)
+      const params=new URLSearchParams(url.search)
+      if(e.target===btn){
+        const response=await fetch(`http://localhost:4000/api/participar/${params.get("v")}`,{
+          method:"POST"
+        })
+        const json=await response.json()
+        console.log(json)
+      }
+    })
+  }catch{
+
+  }
+}
 
 export {
   eventos,
   categoriaEventos,
-  infoEvento
+  infoEvento,
+  botonParticipar
 }

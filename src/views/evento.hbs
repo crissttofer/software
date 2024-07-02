@@ -1,9 +1,8 @@
 <link rel="stylesheet" href="/css/evento/evento.css">
 <body>
 {{> head log = estadoSesion}}
-
+    <div class="evento"></div>
     <template id="tEvento">
-    <div class="evento">
         <div class="encabezado">
             <h1 class="eventoTitle">Encuentro De Futbol Femenino</h1>
             <h3>FECHA: 11/12/2024</h3>
@@ -19,10 +18,10 @@
             </div>
         </div>
         <div class="contBtn">
-           <button class="btn">
+           <button class="btn" id="botonParticipar">
                 Participar
            </button>
         </div>
-    </div>
     </template>
+    <script src="/js/ajax.js" type="module"></script>
 </body>
