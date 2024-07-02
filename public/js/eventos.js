@@ -61,9 +61,7 @@ async function infoEvento(){
     template.querySelector(".infoImg > img").src=`${json.Flayer_evento}`
     let clon=document.importNode(template,true)
     body.appendChild(clon)
-  }catch(err){
-    console.log(err)
-    return
+  }catch{
   }
 }
 
