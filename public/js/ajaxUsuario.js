@@ -1,5 +1,6 @@
-import {eventosPublicados} from '/js/usuarioEventos.js'
+import {defaultEventosUsuario, eventosUsuario} from '/js/usuarioEventos.js'
 
 document.addEventListener("DOMContentLoaded",(e)=>{
-  eventosPublicados()
+  defaultEventosUsuario()
+  eventosUsuario()
 })

@@ -29,6 +29,7 @@ function showCategoriEvent(req,res){
 }
 async function registerEvent(req,res){
   const eventData=req.body
+  console.log(eventData)
   const userCookie=req.cookies.token
   const tokenDecoded=await jwt.verify(userCookie,process.env.SECRET_KEY)
   const categoria=await db.categoria.findUnique({
@@ -71,8 +72,18 @@ function urlImg(filePath){
   const imgPath = "/"+pathSep.slice(imgIndex).join('/')
   return imgPath
 }
+function showRegisterEvent(req,res){
+  if(req.sesion){
+    res.render("formulario")
+  }else{
+    res.redirect("/home")
+  }
+}
+const a = multer({dest:path.join(__dirname,"../public/img/evento")})
 export {
   showEvent,
   registerEvent,
-  upload
+  upload,
+  showRegisterEvent,
+  a
 }

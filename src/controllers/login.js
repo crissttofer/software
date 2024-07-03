@@ -30,7 +30,7 @@ async function validateLogin(req, res) {
         email: userDb.Email,
       };
       const optionsToken = {
-        expiresIn: "30s",
+        expiresIn: "30m",
       };
       jwt.sign(
         userLoged,
@@ -41,7 +41,7 @@ async function validateLogin(req, res) {
             console.log(err);
           } else {
             const optionsCookie = {
-              expires: new Date(Date.now() + 30 * 1000),
+              expires: new Date(Date.now() + 30* 60 * 1000),
             };
             res.cookie("token", token, optionsCookie);
             res.redirect("/home")
@@ -114,8 +114,7 @@ async function registerUser(req,res){
   
 }
 function closeSesion(req,res){
-  res.clearCookie('token')
-  res.redirect("/home")
+  res.clearCookie('token').redirect("/home")
 }
 
 export { 

@@ -83,10 +83,25 @@ async function botonParticipar(){
 
   }
 }
+function logout(){
+  try{
+    document.addEventListener("click",async (e)=>{
+      const logoutBtn=document.getElementById("logout")
+      if(e.target===logoutBtn){
+        await fetch("http://localhost:4000/logout",{method:"POST"})
+          .catch(error => location.reload())
+          return
+      }
+    })
+    return
+  }catch{
 
+  }
+}
 export {
   eventos,
   categoriaEventos,
   infoEvento,
-  botonParticipar
+  botonParticipar,
+  logout
 }

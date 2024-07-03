@@ -74,14 +74,41 @@ async function participarEvento(req,res){
     return
   }else{
     const tokenDecoded=jwt.verify(req.cookies.token,process.env.SECRET_KEY)
-    // await db.
-    res.json(tokenDecoded)
+    await db.asistentes_evento.create({
+      data:{
+        Id_evento:parseInt(req.params.id),
+        Id_usuario:parseInt(tokenDecoded.iduser)
+      }
+    })
+    res.json({message:"Participacion enviada con exito"})
   }
+}
+async function eventosSuscritos(req,res){
+  const userToken= await jwt.verify(req.cookies.token,process.env.SECRET_KEY)
+  const eventos= await db.evento.findMany({
+    where:{
+      asistentes_evento:{
+        some:{
+          usuarios:{
+            Id_usuario:parseInt(userToken.iduser)
+          }
+        }
+      }
+    },
+    select:{
+      Id_evento:true,
+      Nombre_evento:true,
+      Descripcion_evento:true,
+      Portada_Evento:true
+    }
+  })
+  res.json(eventos)
 }
 export {
   todoEventos,
   categoriaEvento,
   eventoEspecifico,
   eventoUsuario,
-  participarEvento
+  participarEvento,
+  eventosSuscritos
 }

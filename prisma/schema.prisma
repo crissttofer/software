@@ -74,9 +74,9 @@ model rol_usuario {
 model asistentes_evento {
   Id_evento        Int
   Id_usuario       Int
-  Fecha_asistencia DateTime @db.Date
-  evento           evento   @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "asistentes_evento_ibfk_1")
-  usuarios         usuarios @relation(fields: [Id_usuario], references: [Id_usuario], onDelete: NoAction, onUpdate: NoAction, map: "asistentes_evento_ibfk_2")
+  Fecha_asistencia DateTime? @db.Date
+  evento           evento    @relation(fields: [Id_evento], references: [Id_evento], onDelete: NoAction, onUpdate: NoAction, map: "asistentes_evento_ibfk_1")
+  usuarios         usuarios  @relation(fields: [Id_usuario], references: [Id_usuario], onDelete: NoAction, onUpdate: NoAction, map: "asistentes_evento_ibfk_2")
 
   @@id([Id_evento, Id_usuario])
   @@index([Id_usuario], map: "Id_usuario")

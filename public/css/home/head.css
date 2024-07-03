@@ -10,6 +10,7 @@
         width: 100%;
         top: 0;
         position: fixed;
+        z-index: 3;
     }
     header>.nav{
         height: 100%;
@@ -127,6 +128,7 @@ li{
     width: 130%;
     margin-left: -30px;
     background-color: #fff;
+    padding: 5px;
 }
 .flexible>li:hover{
     transition:  background-color 1s;
@@ -144,6 +146,14 @@ li{
 }
 .flexible>li>*{
     text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+li > form > input{
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     color: black;
 }

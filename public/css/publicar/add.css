@@ -60,7 +60,7 @@ body{
 }
 
 
-.publicar>button{
+.publicar button{
     cursor: pointer;
     color: #fff;
     background-color: #6691a2;
@@ -70,11 +70,11 @@ body{
     border-radius: 15px;
     padding: 2vh;
     margin-top: 0.5vh;
-    transition: color 1s, background-color 1s;
+    transition: color 0.3s, background-color 0.3s;
     
 
-}.publicar>button:hover{
-    background-color: yellow;
+}.publicar button:hover{
+    background-color: #ed742e;
     color: black;
-    transition: color 1s, background-color 1s;
+    transition: color 0.3s, background-color 0.3s;
 }

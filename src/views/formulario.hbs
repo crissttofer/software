@@ -10,47 +10,47 @@
                 <p>Llena los detalles de tu próximo evento.</p>
             </div>
             <div class="content">
-                <form id="eventoForm">
+                <form id="eventoForm" action="http://localhost:4000/registrarEvento" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="title">Título</label>
-                        <input id="title" placeholder="Título del Evento" required>
+                        <label for="nombreEvento">Título</label>
+                        <input id="nombreEvento" name="nombreEvento" placeholder="Título del Evento" required>
                     </div>
                     <div class="form-group">
-                        <label for="date">Fecha</label>
-                        <input id="date" type="date" required>
+                        <label for="fechaEvento">Fecha</label>
+                        <input id="fechaEvento" name="fechaEvento" type="date" required>
                     </div>
                     <div class="form-group">
-                        <label for="location">Ubicación</label>
-                        <input id="location" placeholder="Ubicación del Evento" required>
+                        <label for="ubicacion">Ubicación</label>
+                        <input id="ubicacion" name="ubicacion" placeholder="Ubicación del Evento" required>
                     </div>
                     <div class="form-group">
-                        <label for="type">Tipo de Evento</label>
-                        <select id="type" required>
+                        <label for="categoria">Tipo de Evento</label>
+                        <select id="categoria" name="categoria" required>
                             <option value="">Seleccionar tipo de evento</option>
-                            <option value="Eventos Culturales">Eventos Culturales</option>
-                            <option value="Eventos Deportivos">Eventos Deportivos</option>
-                            <option value="Eventos Academicos">Eventos Academicos</option>
-                            <option value="Eventos Sociales">Eventos Sociales</option>
+                            <option value="cultural">Eventos Culturales</option>
+                            <option value="deportivo">Eventos Deportivos</option>
+                            <option value="academico">Eventos Academicos</option>
+                            <option value="social">Eventos Sociales</option>
             
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Descripción</label>
-                        <textarea id="description" placeholder="Proporciona detalles sobre el evento..." rows="4" required></textarea>
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" placeholder="Proporciona detalles sobre el evento..." rows="4" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="flyer">Volante del Evento</label>
-                        <input id="flyer" type="file" accept="image/*" required>
+                        <label for="portada">Portada del Evento</label>
+                        <input id="portada" name="portada" type="file" accept="image/*" required>
                     </div>
                     <div class="form-group">
-                        <label for="cover">Portada del Evento</label>
-                        <input id="cover" type="file" accept="image/*" required>
+                        <label for="flayer">Volante del Evento</label>
+                        <input id="flayer" name="flayer" type="file" accept="image/*" required>
                     </div>
                     <div class="form-group">
-                        <label for="mode">Modo del Evento</label>
-                        <select id="mode" required>
+                        <label for="modalidad">Modo del Evento</label>
+                        <select id="modalidad" name="modalidad" required>
                             <option value="">Seleccionar modo del evento</option>
-                            <option value="in-person">Presencial</option>
+                            <option value="presencial">Presencial</option>
                             <option value="virtual">Virtual</option>
                         </select>
                     </div>
