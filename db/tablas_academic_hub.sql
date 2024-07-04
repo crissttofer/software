@@ -81,7 +81,7 @@ DROP TABLE IF EXISTS Asistentes_evento;
 CREATE TABLE Asistentes_evento (
     Id_evento INT NOT NULL,
     Id_usuario INT NOT NULL,
-    Fecha_asistencia DATE NOT NULL,
+    Fecha_asistencia DATE NULL,
     PRIMARY KEY (Id_evento, Id_usuario),
     FOREIGN KEY (Id_evento) REFERENCES Evento(Id_evento),
     FOREIGN KEY (Id_usuario) REFERENCES Usuarios(Id_usuario)
