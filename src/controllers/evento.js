@@ -17,7 +17,7 @@ const storage=multer.diskStorage({
     cb(null,dir)
   },
   filename:function (req,file,cb){
-    cb(null,`${Date.now()}${path.extname(file.originalname)}`)
+    cb(null,`${Math.random()}${Date.now()}${path.extname(file.originalname)}`)
   }
 })
 const upload=multer({storage:storage})
@@ -63,7 +63,7 @@ async function registerEvent(req,res){
       Id_categoria:categoria.Id_categoria
     }
   })
-  res.send("evento publicado")
+  res.redirect("/usuario")
 }
 function urlImg(filePath){
   const normailsedPath=path.normalize(filePath.path)

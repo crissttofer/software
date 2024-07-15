@@ -42,9 +42,8 @@ app.set('view engine','hbs')
 
 
 
-app.get('/helloword',(req,res)=>{
-  console.log()
-  res.render("helloworld")
+app.get('/',(req,res)=>{
+  res.redirect("/home")
 })
 
 app.use('/',routerPrueba)
