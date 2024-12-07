@@ -6,186 +6,36 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    
     <title>{{title}}</title>
   </head>
-
-  <body>
-    <div class="left-section">
-      <div class="logo">
-        <img src="/img/logo3.png" />
-        <a href="#">Academic Hub</a>
-      </div>
-
-      <div class="sidebar">
-        <div class="item active">
-          <i class="ri-home-4-line"></i>
-          <h3>Inicio</h3>
-        </div>
+  <template id="tem-tarjetas">
         <div class="item">
-          <i class="ri-user-6-line"></i>
-          <h3>Mi perfil</h3>
-        </div>
-        <div class="item">
-          <i class="ri-star-line"></i>
-          <h3>Populares</h3>
-        </div>
-        <div class="item">
-          <i class="ri-edit-box-line"></i>
-          <h3>Mis Eventos</h3>
-        </div>
-        <div class="item">
-          <i class="ri-thumb-up-line"></i>
-          <h3>Eventos Suscritos</h3>
-        </div>
-        <div class="item">
-          <i class="ri-settings-3-line"></i>
-          <h3>Ajustes</h3>
-        </div>
-      </div>
-
-      <div class="sign-out">
-        <i class="ri-logout-box-r-line"></i>
-        <h3>Cerrar Sesion</h3>
-      </div>
-    </div>
-
-    <div class="main">
-      <div class="header">
-        <div class="search">
-          <button><i class="ri-search-2-line"></i></button>
-          <input type="text" placeholder="Buscar por nombre..." />
-        </div>
-        <i class="ri-equalizer-2-line"></i>
-      </div>
-
-      <template id="tem-categorias">
-        <div class="separator">
-          <h3>Descubrir Eventos</h3>
-          <div class="categories">
-            <a class="active">Todos</a>
-            <a>evento</a>
-          </div>
+          <a href="">
+            <div class="like">
+             <i class="ri-heart-3-fill"></i>
+            </div>
+            <img src=""></img>
+            <div class="details">
+              <h3>Animal On Winter</h3>
+              <div class="info">
+                <div class="location">
+                  <i class="ri-map-pin-line"></i>
+                  <h5>Canada</h5>
+                </div>
+                {{!-- <div class="rate">
+                  <i class="ri-star-fill"></i>
+                  <h5>4.9</h5>
+                </div> --}}
+              </div>
+            </div>
+          </a>
         </div>
       </template>
-      <template id="tem-tarjetas">
-        <div class="video-items">
-              <div class="item">
-                  <div class="like">
-                      <i class="ri-heart-3-fill"></i>
-                  </div>
-                  <img src="/img/evento/0.8807734643303541720912335146.jpg"></img>
-                  <div class="details">
-                      <h3>Animal On Winter</h3>
-                      <div class="info">
-                          <div class="location">
-                              <i class="ri-map-pin-line"></i>
-                              <h5>Canada</h5>
-                          </div>
-                          <div class="rate">
-                              <i class="ri-star-fill"></i>
-                              <h5>4.9</h5>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </template>
-    </div>
-
-    <div class="right-section">
-      <div class="profile">
-        <div class="info">
-          <i class="ri-user-3-line"></i>
-          <h5>Welcome Reza!</h5>
-        </div>
-        <div class="user">
-          <i class="ri-notification-2-line"></i>
-          <img src="/img/perfilDefault.png" />
-        </div>
-      </div>
-
-      <h3>Current Playing</h3>
-
-      <div class="player">
-        <div class="content">
-          <img src="/img/evento/0.8807734643303541720912335146.jpg" />
-          <div class="info">
-            <h5>Germany Travel Tour</h5>
-            <div class="rate">
-              <i class="ri-star-fill"></i>
-              <h5>4.7</h5>
-            </div>
-          </div>
-          <div class="desc">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero...
-            </p>
-          </div>
-        </div>
-        <i class="ri-pause-large-line"></i>
-      </div>
-
-      <h3>Populares de esta semana</h3>
-
-      <div class="weekly">
-        <div class="item">
-          <div class="content">
-            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
-            <div class="info">
-              <h4>Sea Balloon</h4>
-              <div class="view">
-                <i class="ri-eye-fill"></i>
-                <h5>2,320</h5>
-              </div>
-            </div>
-          </div>
-          <i class="ri-heart-3-fill"></i>
-        </div>
-        <div class="item">
-          <div class="content">
-            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
-            <div class="info">
-              <h4>Flower</h4>
-              <div class="view">
-                <i class="ri-eye-fill"></i>
-                <h5>2,490</h5>
-              </div>
-            </div>
-          </div>
-          <i class="ri-heart-3-fill"></i>
-        </div>
-        <div class="item">
-          <div class="content">
-            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
-            <div class="info">
-              <h4>Street</h4>
-              <div class="view">
-                <i class="ri-eye-fill"></i>
-                <h5>1,420</h5>
-              </div>
-            </div>
-          </div>
-          <i class="ri-heart-3-fill"></i>
-        </div>
-        <div class="item">
-          <div class="content">
-            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
-            <div class="info">
-              <h4>Sea Water</h4>
-              <div class="view">
-                <i class="ri-eye-fill"></i>
-                <h5>9,610</h5>
-              </div>
-            </div>
-          </div>
-          <i class="ri-heart-3-fill"></i>
-        </div>
-      </div>
-    </div>
-
-    <script src="/js/script.js"></script>
-    <script src="/js/ajax.js"></script>
-  </body>
+  {{{body}}}
+  <script src="/js/ajax.js" type="module"></script>
 </html>

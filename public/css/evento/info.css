@@ -1,0 +1,106 @@
+:root {
+  --primary-color: #0066ff;
+  --background-color: #fff;
+  --card-background: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Event Detail Styles */
+.event-detail {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.event-detail.active {
+  display: block;
+}
+
+.back-button {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  
+}
+
+.event-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/placeholder.svg');
+  background-color: #333333;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.event-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.event-meta {
+  display: flex;
+  gap: 20px;
+}
+
+.event-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.event-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.event-flyer img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.participate-button {
+  grid-column: 1 / -1;
+  padding: 16px 32px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: fit-content;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+  
+  .sidebar {
+      width: 100%;
+  }
+  
+  .event-content {
+      grid-template-columns: 1fr;
+  }
+}

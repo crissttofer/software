@@ -1,30 +1,210 @@
-<link rel="stylesheet" href="/css/home/cuerpo.css">
-<link rel="stylesheet" href="/css/publicar/infocard.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <body>
+    <div class="left-section">
+      <div class="logo">
+        <img src="/img/logo.png" />
+        <a href="#">Academic Hub</a>
+      </div>
 
-<body>
-{{> head log = estadoSesion}}
-<main class="info"> 
-    <div class="navCategorias">
-        <h1 class="titelCategoria">CATEGORIAS</h1>
-        <ul class="allCategoria">
-            <li class="cardCategoria" data-categoria="cultural">Eventos Culturales</li>
-            <li class="cardCategoria" data-categoria="deportivo">Eventos Deportivos</li>
-            <li class="cardCategoria" data-categoria="academico">Eventos Academicos</li>
-            <li class="cardCategoria" data-categoria="social">Eventos Sociales</li>
-        </ul>
-    </div>
-    <div class="navCardInfo">
-    </div>
-    <template id="templateCardEvent">
-        <div class="cardInfo">
-            <a href="" class="noDecoration">
-                <img src="" alt="" class="imgCardInfo">
-                <h1 class="TitleCardInfo"></h1>
-                <p class="infoCardInfo">
-                </p>
-            </a>
+      <div class="sidebar">
+        <a href="/home">
+        <div class="item active">
+          <i class="ri-home-4-line"></i>
+          <h3>Inicio</h3>
         </div>
-    </template>
-</main>
-    {{!-- <script src="/js/ajax.js" type="module"></script> --}}
-</body>
+        </a>
+        <a href="/register">
+        <div class="item">
+          <i class="ri-chat-upload-line"></i>
+          <h3>Subir Evento</h3>
+        </div>
+
+        </a>
+        {{#if estadoSesion}}
+        <div class="item">
+          <i class="ri-user-6-line"></i>
+          <h3>Mi perfil</h3>
+        </div>
+        <div data-evento="misEventos" class="item">
+          <i data-evento="misEventos" class="ri-edit-box-line"></i>
+          <h3 data-evento="misEventos">Mis Eventos</h3>
+        </div>
+        <div data-evento="suscritos" class="item">
+          <i data-evento="suscritos" class="ri-thumb-up-line"></i>
+          <h3 data-evento="suscritos">Eventos Suscritos</h3>
+        </div>
+        <div class="item">
+          <i class="ri-settings-3-line"></i>
+          <h3>Ajustes</h3>
+        </div>
+        {{/if}}
+      </div>
+      {{#if estadoSesion}}
+        <div id="logout" class="sign-out" style="z-index: 10;">
+          <i id="logout-ico" class="ri-logout-box-r-line"></i>
+          <h3 id="logout-text">Cerrar Sesion</h3>
+        </div>
+      {{else}}
+      <style>
+        .boton {
+    background-color: #ff9800; /* Naranja */
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #e68a00; /* Un naranja más oscuro */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.boton:active {
+    background-color: #cc7a00; /* Un naranja aún más oscuro */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+      </style>
+        <a href="/login">
+        <button class="boton">INICIAR SESIÓN</button>
+        </a>
+      {{/if}}
+      
+    </div>
+
+    <div class="main">
+      <div class="header">
+        <div class="search">
+          <button><i class="ri-search-2-line"></i></button>
+          <input type="text" placeholder="Buscar por nombre..." />
+        </div>
+        <i class="ri-equalizer-2-line"></i>
+      </div>
+
+      {{!-- <template id="tem-categorias">
+        <div class="separator">
+          <h3>Descubrir Eventos</h3>
+          <div class="categories">
+            <a class="active">Todos</a>
+            <a>evento</a>
+          </div>
+        </div>
+      </template> --}}
+      <div class="separator">
+          <h3>Descubrir Eventos</h3>
+          <div class="categories">
+            <a data-categoria="todos" class="active">Todos</a>
+            <a data-categoria="cultural">Cultural</a>
+            <a data-categoria="deportivo">Deportivo</a>
+            <a data-categoria="academico">Academico</a>
+            <a data-categoria="social">Social</a>
+          </div>
+        </div>
+      <div id="video-items" class="video-items"></div>
+    </div>
+
+    <div class="right-section">
+      {{#if estadoSesion}}
+      <div class="profile">
+        <div class="info">
+          <i class="ri-user-3-line"></i>
+          <h5 id="username">Welcome Reza!</h5>
+        </div>
+        <div class="user">
+          <i class="ri-notification-2-line"></i>
+          <img src="/img/perfilDefault.png" />
+        </div>
+      </div>
+       <h3>Current Playing</h3>
+
+      <div class="player">
+        <div class="content">
+          <img src="/img/evento/0.8807734643303541720912335146.jpg" />
+          <div class="info">
+            <h5>Germany Travel Tour</h5>
+            <div class="rate">
+              <i class="ri-star-fill"></i>
+              <h5>4.7</h5>
+            </div>
+          </div>
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero...
+            </p>
+          </div>
+        </div>
+        <i class="ri-pause-large-line"></i>
+      </div>
+      {{!-- QUITAAAAAAR --}}
+      <script src="/js/ajaxUsuario.js" type="module">
+      </script>
+      {{else}}
+      <br>
+      {{/if}}
+
+
+     
+
+      <div class="weekly">
+        <div class="item">
+          <div class="content">
+            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
+            <div class="info">
+              <h4>Evento</h4>
+              <div class="view">
+                <i class="ri-eye-fill"></i>
+                <h5>2,320</h5>
+              </div>
+            </div>
+          </div>
+          <i class="ri-heart-3-fill"></i>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
+            <div class="info">
+              <h4>Evento</h4>
+              <div class="view">
+                <i class="ri-eye-fill"></i>
+                <h5>2,490</h5>
+              </div>
+            </div>
+          </div>
+          <i class="ri-heart-3-fill"></i>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
+            <div class="info">
+              <h4>Evento</h4>
+              <div class="view">
+                <i class="ri-eye-fill"></i>
+                <h5>1,420</h5>
+              </div>
+            </div>
+          </div>
+          <i class="ri-heart-3-fill"></i>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="/img/evento/0.8807734643303541720912335146.jpg" />
+            <div class="info">
+              <h4>Evento</h4>
+              <div class="view">
+                <i class="ri-eye-fill"></i>
+                <h5>9,610</h5>
+              </div>
+            </div>
+          </div>
+          <i class="ri-heart-3-fill"></i>
+        </div>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>

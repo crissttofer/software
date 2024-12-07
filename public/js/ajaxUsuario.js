@@ -1,6 +1,9 @@
-import {defaultEventosUsuario, eventosUsuario} from '/js/usuarioEventos.js'
+import {defaultEventosUsuario, eventosUsuario, infUsuario,usuarioEventos,suscrito} from '/js/usuarioEventos.js'
 
 document.addEventListener("DOMContentLoaded",(e)=>{
   defaultEventosUsuario()
   eventosUsuario()
+  infUsuario()
+  usuarioEventos()
+  suscrito()
 })

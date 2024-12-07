@@ -11,7 +11,8 @@ async function todoEventos(req,res){
       Id_evento:true,
       Nombre_evento:true,
       Descripcion_evento:true,
-      Portada_Evento:true
+      Portada_Evento:true,
+      Ubicacion_evento:true
     }
   })
   res.json(eventos)
@@ -80,7 +81,8 @@ async function participarEvento(req,res){
         Id_usuario:parseInt(tokenDecoded.iduser)
       }
     })
-    res.json({message:"Participacion enviada con exito"})
+    res.redirect("/home")
+    // rjson({message:"Participacion enviada con exito"})
   }
 }
 async function eventosSuscritos(req,res){

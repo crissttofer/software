@@ -24,6 +24,19 @@ body{
     height: 100vh;
 }
 
+.details h3 {
+    display: -webkit-box;        /* Caja flexible necesaria para clamping */
+  -webkit-line-clamp: 3;       
+  -webkit-box-orient: vertical; /* Orientación del contenedor */
+  overflow: hidden;  
+}
+.location h5 {
+    display: -webkit-box;        /* Caja flexible necesaria para clamping */
+  -webkit-line-clamp: 2;       
+  -webkit-box-orient: vertical; /* Orientación del contenedor */
+  overflow: hidden;  
+}
+
 .left-section{
     height: 100%;
     display: flex;
