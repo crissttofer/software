@@ -21,10 +21,10 @@
 
         </a>
         {{#if estadoSesion}}
-        <div class="item">
+        {{!-- <div class="item">
           <i class="ri-user-6-line"></i>
           <h3>Mi perfil</h3>
-        </div>
+        </div> --}}
         <div data-evento="misEventos" class="item">
           <i data-evento="misEventos" class="ri-edit-box-line"></i>
           <h3 data-evento="misEventos">Mis Eventos</h3>
@@ -33,10 +33,10 @@
           <i data-evento="suscritos" class="ri-thumb-up-line"></i>
           <h3 data-evento="suscritos">Eventos Suscritos</h3>
         </div>
-        <div class="item">
+        {{!-- <div class="item">
           <i class="ri-settings-3-line"></i>
           <h3>Ajustes</h3>
-        </div>
+        </div> --}}
         {{/if}}
       </div>
       {{#if estadoSesion}}
@@ -114,20 +114,20 @@
       <div class="profile">
         <div class="info">
           <i class="ri-user-3-line"></i>
-          <h5 id="username">Welcome Reza!</h5>
+          <h5 id="username"></h5>
         </div>
         <div class="user">
           <i class="ri-notification-2-line"></i>
           <img src="/img/perfilDefault.png" />
         </div>
       </div>
-       <h3>Current Playing</h3>
+       <h3>Eventos mas vistos</h3>
 
       <div class="player">
         <div class="content">
           <img src="/img/evento/0.8807734643303541720912335146.jpg" />
           <div class="info">
-            <h5>Germany Travel Tour</h5>
+            <h5>Evento conmemorativo</h5>
             <div class="rate">
               <i class="ri-star-fill"></i>
               <h5>4.7</h5>

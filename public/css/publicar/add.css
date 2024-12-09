@@ -74,7 +74,7 @@ body{
     
 
 }.publicar button:hover{
-    background-color: #ed742e;
+    background-color: #FED24D;
     color: black;
     transition: color 0.3s, background-color 0.3s;
 }

@@ -5,7 +5,7 @@
     header{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        background: #ed742e;
+        background: #FED24D;
         height: 60px;
         width: 100%;
         top: 0;
@@ -153,7 +153,7 @@ li > form > input{
     background: transparent;
     border: none;
     text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Font Awesome 6 Brands';
     font-size: 25px;
     color: black;
 }

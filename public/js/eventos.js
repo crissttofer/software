@@ -130,6 +130,9 @@ async function botonParticipar() {
         );
         const json = await response.json();
         console.log(json);
+        if(json.status===200){
+          window.location.href = "/home" 
+        }
       }
     });
   } catch {}

@@ -9,7 +9,7 @@
     "start": "node ./src/app.js"
   },
   "keywords": [],
-  "author": "Huaman Altamirano Cristofer Jhoseph, Gomez Alarcón Samir, Carrion Ccorimanya Angelo, Diaz Quispe Yeferson",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.14.0",

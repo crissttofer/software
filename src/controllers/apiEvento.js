@@ -81,8 +81,8 @@ async function participarEvento(req,res){
         Id_usuario:parseInt(tokenDecoded.iduser)
       }
     })
-    res.redirect("/home")
-    // rjson({message:"Participacion enviada con exito"})
+    // res.redirect("/home")
+    res.json({message:"Participacion enviada con exito",status:200})
   }
 }
 async function eventosSuscritos(req,res){
